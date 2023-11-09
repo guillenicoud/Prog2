@@ -1,0 +1,20 @@
+<p>Nombre del Empleado: {{nombre}}</p>
+
+<p class="text-start">Apellido del Empleado: {{apellido}}</p>
+
+<p>Edad del Empleado: {{edad<18 ? "Es menor de edad" : "Es mayor de edad"}}</p>
+
+<p class="text-star">Empresa del Empleado: {{empresa.value}}</p>
+
+<p  >Introduce la empresa</p><input type="text" #empresa (keydown)="0" [disabled]="habilitacionCuadro" >
+
+<br>        
+<br>
+
+<input class="btn btn-primary" type="button" value="Dale" (click)="llamaEmpresa(empresa.value)">
+
+<!-- Registrado: <input type="checkbox" id="registro" name="registro" [checked]="usuRegistrado" (click)="setUsuarioRegistrado()  "> -->
+
+{{getRegistroUsuario()}}
+
+<!-- No Regiestrado: <input type="radio" name="registro"  >  -->

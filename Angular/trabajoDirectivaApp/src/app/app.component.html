@@ -1,0 +1,29 @@
+<h1 style="text-align: center;">{{titulo }}</h1>
+
+<form>
+
+  <input type="text" name="nombre" [(ngModel)]="nombre">
+  <br>
+  <input type="text" name="apellido" [(ngModel)]="apellido">
+  <br>
+  <input type="text" name="cargo" [(ngModel)]="cargo">
+  <br>
+  <input type="submit" value="Registrar" (click)="registrarUsuario()">
+
+</form>
+
+<br>
+
+<p *ngIf="registrado; else sinRegistrar"> {{mensaje}} {{nombre}} {{apellido}} y tiene el cargo de <span [ngClass]=" {paraDirectores: cargo=='directores'}">{{cargo}}</span></p>
+
+<ng-template #sinRegistrar>
+
+  <p>Nadie Registrado</p>
+
+</ng-template>
+
+<br>
+
+<ul *ngFor="let entrada of entradas; let i=index" ><li><span style="font-size: larger; font-style: italic;">{{entrada.titulo}}</span></li>
+  . Entrada {{i}}
+</ul>

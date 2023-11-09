@@ -1,0 +1,14 @@
+*{
+    font-family: Futura;
+}
+
+input{
+    width: 50px;
+    margin: 5px;
+}
+
+button{
+    display: block;
+    width: 400px;
+    text-align: center;
+}
