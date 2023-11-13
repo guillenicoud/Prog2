@@ -10,18 +10,10 @@
 <div class="container-fluid text-center mt-4">
   <div class="container">
     <div class="row mt-3">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <h2>Camionero</h2>
-        <img src="assets/camionero.jpg" alt="" class="img-fluid" />
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <h2>Torpedo</h2>
-        <img src="assets/torpedo.jpg" alt="" class="img-fluid"/>
-        <label for=""></label>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <h2>Imperial</h2>
-        <img src="assets/imperial.webp" alt="" class="img-fluid">
+      <div *ngFor="let mate of getMates()" class="col-xs-12 col-sm-6 col-md-4">
+        <h2>´{{mate.nombre}}</h2>
+        <img [src]="mate.imageUrl" alt="{{mate.nombre}}" class="img-fluid" />
+        <h3>{{mate.precio}}</h3>
       </div>
     </div>
   </div>
