@@ -11,12 +11,15 @@ import { FormComponent } from './form/form.component';
 import { YerbasComponent } from './yerbas/yerbas.component';
 import { BombillasComponent } from './bombillas/bombillas.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import { DolarComponent } from './dolar/dolar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 const  appRoutes: Routes=[
   {path: '', component: AppComponent},
   {path: 'yerbas', component: YerbasComponent},
-  {path: 'bombillas', component: BombillasComponent}
+  {path: 'bombillas', component: BombillasComponent},
+  {path: 'home', component: HomeComponent}
 ]
 
 @NgModule({
@@ -27,14 +30,15 @@ const  appRoutes: Routes=[
     FooterComponent,
     FormComponent,
     YerbasComponent,
-    BombillasComponent
-
+    BombillasComponent,
+    DolarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

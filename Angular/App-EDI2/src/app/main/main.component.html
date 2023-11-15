@@ -12,7 +12,7 @@
     <div class="row mt-3">
       <div *ngFor="let mate of getMates()" class="col-xs-12 col-sm-6 col-md-4">
         <h2>´{{mate.nombre}}</h2>
-        <img [src]="mate.imageUrl" alt="{{mate.nombre}}" class="img-fluid" />
+        <img [src]="mate.imageUrl" alt="{{mate.nombre}}" class="img-fluid img responsive img-thumbnail" />
         <h3>{{mate.precio}}</h3>
       </div>
     </div>
