@@ -28,7 +28,6 @@
 }
 
 .background{
-    background-image: url(background.jpg);
     background-size: cover;;
 }
 
@@ -39,6 +38,7 @@
 
 .links:hover{
     border-bottom: 2px solid #b6c4ec;
+    font-size: 70px;
 }
 
 /* .def {
