@@ -1,8 +1,46 @@
-.capital{
-    font-size: 100px;
-    color: rgba(40, 16, 172, 0.849)
+.contenedores{
+    /* border: 2px solid #000; */
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding: 0px 222px 20px 0px;
 }
 
-body{
-    background-image: url(background.jpg);
+.links{
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Futura;
+    color: #b6c4ec;
 }
+
+.capital{
+    font-size: 100px;
+    color: #ba8a9b;
+    font-weight: 300;
+    font-family: Futura;
+    font-style: italic;
+    border-bottom: 5px solid #ba8a9b;
+}
+
+.palabra{
+    font-weight: 900;
+    font-size: 30px;
+    /* color: white; */
+}
+
+.background{
+    background-image: url(background.jpg);
+    background-size: cover;;
+}
+
+.titulo{
+    /* color: #fff; */
+    font-weight: 900;
+}
+
+.links:hover{
+    border-bottom: 2px solid #b6c4ec;
+}
+
+/* .def {
+    color: #fff;
+} */
