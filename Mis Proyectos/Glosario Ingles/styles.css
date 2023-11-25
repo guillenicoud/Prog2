@@ -6,7 +6,7 @@
 }
 
 .links{
-    font-size: 20px;
+    font-size: 45px;
     text-decoration: none;
     font-family: Futura;
     color: #b6c4ec;
@@ -24,6 +24,8 @@
 .palabra{
     font-weight: 900;
     font-size: 30px;
+    color: #b6c4ec;
+
     /* color: white; */
 }
 
@@ -32,15 +34,15 @@
 }
 
 .titulo{
-    /* color: #fff; */
+    color: #fff;
+
     font-weight: 900;
 }
 
-.links:hover{
-    border-bottom: 2px solid #b6c4ec;
-    font-size: 70px;
-}
+a:hover{
+    border-bottom: 5px solid #b6c4ec;
+} 
 
-/* .def {
-    color: #fff;
-} */
+.def {
+    color: #b6c4ec;
+}
