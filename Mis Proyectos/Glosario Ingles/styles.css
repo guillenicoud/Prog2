@@ -15,7 +15,7 @@
 .capital{
     font-size: 100px;
     color: #ba8a9b;
-    font-weight: 300;
+    font-weight: bold;
     font-family: Futura;
     font-style: italic;
     border-bottom: 5px solid #ba8a9b;
@@ -30,12 +30,17 @@
 }
 
 .background{
-    background-size: cover;;
+    background-size: cover;
+    /* background-image: url(background.jpg); */
 }
 
 .titulo{
     color: #fff;
 
+    font-weight: 900;
+}
+
+a{
     font-weight: 900;
 }
 
