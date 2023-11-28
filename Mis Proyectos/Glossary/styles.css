@@ -1,18 +1,19 @@
-.contenedores{
+.contenedores {
     /* border: 2px solid #000; */
     border-radius: 30px;
     margin-bottom: 20px;
     padding: 0px 222px 20px 0px;
 }
 
-.links{
-    font-size: 45px;
+.links {
+    font-size: 35px;
     text-decoration: none;
     font-family: Futura;
     color: #b6c4ec;
+    text-align: justify;
 }
 
-.capital{
+.capital {
     font-size: 100px;
     color: #ba8a9b;
     font-weight: bold;
@@ -21,7 +22,7 @@
     border-bottom: 5px solid #ba8a9b;
 }
 
-.palabra{
+.palabra {
     font-weight: 900;
     font-size: 30px;
     color: #b6c4ec;
@@ -29,25 +30,41 @@
     /* color: white; */
 }
 
-.background{
+.background {
     background-size: cover;
     /* background-image: url(background.jpg); */
 }
 
-.titulo{
+.titulo {
     color: #fff;
-
+    font-size: 50px;
     font-weight: 900;
 }
 
-a{
+a {
     font-weight: 900;
 }
 
-a:hover{
+a:hover {
     border-bottom: 5px solid #b6c4ec;
-} 
+}
 
 .def {
     color: #b6c4ec;
+}
+
+.btn-text {
+    color: #b6c4ec;
+    text-decoration: none;
+}
+
+#btnTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* background-color: #007bff;
+            color: #fff; */
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 }
