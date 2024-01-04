@@ -275,5 +275,4 @@ let myNestedArray = [
   // Cambia solo el código encima de esta línea
 ];
 
-console.log(myNestedArray[0][1]);
-console.log(myNestedArray)
+console.log(myNestedArray);
