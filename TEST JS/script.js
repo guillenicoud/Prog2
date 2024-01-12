@@ -265,14 +265,17 @@
 //   setTimeout(cambiarPagina, 2000);
 // }
 
-let myNestedArray = [
-  // Cambia solo el código debajo de esta línea
-  ['unshift', false, 1, 2, 3, 'complex', 'nested'],
-  ['loop', 'shift', 6, 7, 1000, 'method',['deep',['deeper',['deepest']]]],
-  ['concat', false, true, 'spread', 'array'],
-  ['mutate', 1327.98, 'splice', 'slice', 'push'],
-  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']
-  // Cambia solo el código encima de esta línea
-];
+Array.prototype.myFilter = function(callback) {
+  const filteredArray = [];
+  for (let i = 0; i < this.length; i++) {
+    if (callback(this[i], i, this)) {
+      filteredArray.push(this[i]);
+    }
+  }
+  return filteredArray;
+};
 
-console.log(myNestedArray);
+// Pruebas
+console.log([23, 65, 98, 5, 13].myFilter(item => item % 2)); // Debería devolver [23, 65, 5, 13]
+console.log(["naomi", "quincy", "camperbot"].myFilter(element => element === "naomi")); // Debería devolver ["naomi"]
+console.log([1, 1, 2, 5, 2].myFilter((element, index, array) => array.indexOf(element) === index)); // Debería devolver [1, 2, 5]
