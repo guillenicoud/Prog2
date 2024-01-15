@@ -152,19 +152,28 @@
 
 //   // console.log(array);
 
-const squareList = function(arr){
+const squareList = arr => {
+  let enteros = arr.filter(function(num){
+    return num > 0 && num % 1 == 0;
+  })
+  let cuadrados = enteros.map(function(num){
+    return num * num;
+  })
 
-  return arr;
+  return cuadrados;
 };
 
-let array = [-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3];
-let newA = [];
-let square = 0;
-for (let i = 0; i < array.length; i ++){
-  if (array[i] > 0 && array[i] % 1 === 0 ){
-    square = array[i] * array[i];
-    newA.push(square);
-  }
-}
+const squaredIntegers = squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]);
+console.log(squaredIntegers);
 
-console.log(newA);
+
+// let newA = []; // NUEVO ARRAY PARA ALMACENAR LOS VALORES ELEVADOS AL CUADRADO
+// let square = 0; // VARIABLE AUXILIAR DONDE SE ALOJAN LOS VALORES ELEVADOS
+// for (let i = 0; i < array.length; i ++){
+//   if (array[i] > 0 && array[i] % 1 === 0 ){ // Compruebo si los valores son enteros mayores a 0
+//     square = array[i] * array[i];
+//     newA.push(square);
+//   }
+// }
+
+// console.log(newA);
