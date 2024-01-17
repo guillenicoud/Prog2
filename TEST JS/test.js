@@ -152,19 +152,19 @@
 
 //   // console.log(array);
 
-const squareList = arr => {
-  let enteros = arr.filter(function(num){
-    return num > 0 && num % 1 == 0;
-  })
-  let cuadrados = enteros.map(function(num){
-    return num * num;
-  })
+// const squareList = arr => {
+//   let enteros = arr.filter(function(num){
+//     return num > 0 && num % 1 == 0;
+//   })
+//   let cuadrados = enteros.map(function(num){
+//     return num * num;
+//   })
 
-  return cuadrados;
-};
+//   return cuadrados;
+// };
 
-const squaredIntegers = squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]);
-console.log(squaredIntegers);
+// const squaredIntegers = squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]);
+// console.log(squaredIntegers);
 
 
 // let newA = []; // NUEVO ARRAY PARA ALMACENAR LOS VALORES ELEVADOS AL CUADRADO
@@ -177,3 +177,107 @@ console.log(squaredIntegers);
 // }
 
 // console.log(newA);
+
+// ARRAY SORT
+
+// const globalArray = [5, 6, 3, 2, 9];
+
+// function nonMutatingSort(arr) {
+//   // Cambia solo el código debajo de esta línea
+//   let arr2 = arr.slice();
+//   console.log(arr2);
+//   return arr2.sort((a,b)=> a - b);
+// }
+
+// console.log(nonMutatingSort(globalArray));
+
+// STRING SPLIT
+
+// const str = "Hello World";
+// const bySpace = str.split(" ");
+
+// const otherString = "How9are7you2today";
+// const byDigits = otherString.split(/\d/);
+
+
+// function splitify(str) {
+//   // Only change code below this line
+//   return  str.split(/\W/);
+//   // Only change code above this line
+// }
+
+// console.log(splitify("Hello World,I-am code"));
+
+// STR JOIN
+
+// const arr = ["Hello", "World"];
+// const str = arr.join(" ");
+
+// console.log(str);
+
+// function sentensify(str) {
+//   // Cambia solo el código debajo de esta línea
+//   let arr = str.split(/[.-,]/);
+//   str = arr.join(" ");
+//   return str;
+//   // Cambia solo el código encima de esta línea
+// }
+
+// console.log(sentensify("May-the-force-be-with-you"));
+
+// Aplicar programación funcional para convertir cadenas a slugs de URL
+
+// Cambia solo el código debajo de esta línea
+
+// function urlSlug(title) {
+//     title = title.toLowerCase();
+//     let a = title.split(" ");
+//     const arr = a.filter(function(element){
+//       return element !== '';
+//     });
+//     let cad = arr.join('-');
+//   return cad;
+// }
+
+// // Cambia solo el código encima de esta línea
+// console.log(urlSlug(" Winter Is  Coming"));
+
+// Usa el método "every" para comprobar que cada elemento de un arreglo atienda un criterio
+
+// function checkPositive(arr) {
+//   // Cambia solo el código debajo de esta línea
+//   let a = arr.every(function(num){
+//     return num > 0;
+//   })
+//   return a;
+//   // Cambia solo el código encima de esta línea
+// }
+
+// checkPositive([1, 2, 3, -4, 5]);
+
+// Usa el método "some" para comprobar si algún elemento en un arreglo cumple un criterio
+
+function checkPositive(arr) {
+  // Cambia solo el código debajo de esta línea
+  
+  return arr.some((element => 
+    element > 0)
+  )
+  return a;
+  // Cambia solo el código encima de esta línea
+}
+
+console.log(checkPositive([-1, -2, -3, -4, -5]));
+
+// Introducción a la currificación y a la aplicación de funciones parciales ARIDAD
+
+function add(x) {
+  // Cambia solo el código debajo de esta línea
+  return function(y){
+    return function(z){
+      return x + y + z
+    }
+  }
+}
+
+console.log(add(10)(20)(30));
