@@ -54,10 +54,17 @@ console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly"]));
 
 // Seek and Destroy
 
-function destroyer(arr, a, b) {
-    let newArr = arr.filter(function(x){
-        return x !== a && x !== b;
-    });
-}
+function destroyer(arr, ...args) {
+  for (let i = 0; i < arr.length; i++){
+    for (let j = 0; j < args.length; j++){
+      if (arr[i] === args[j]){
+        arr.splice(i, 1);
+        i--; 
+      }
+    }
+  }
 
-console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
+  return arr;  
+}
+console.log(
+destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan"));
