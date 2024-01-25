@@ -88,8 +88,8 @@ function whatIsInAName(collection, source) {
   }
   */
 
-  let newA = []
-  for (let key in collection){
+let newA = [];
+for (let key in collection){
     console.log(Object.keys(collection[key]));
     for (let clave in collection[key]){
       console.log(clave);
@@ -98,7 +98,7 @@ function whatIsInAName(collection, source) {
     newA.push(collection[key]);
   } 
 }
-console.log(newA)
+console.log(newA);
 whatIsInAName(
   [
     { first: "Romeo", last: "Montague" },
