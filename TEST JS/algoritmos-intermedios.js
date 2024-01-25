@@ -53,18 +53,34 @@ console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly"]));
 */
 
 // Seek and Destroy
+/*
+function destroyer(...arr) {
+    return arr;
 
-function destroyer(arr, ...args) {
-  for (let i = 0; i < arr.length; i++){
-    for (let j = 0; j < args.length; j++){
-      if (arr[i] === args[j]){
-        arr.splice(i, 1);
-        i--; 
-      }
-    }
-  }
-
-  return arr;  
 }
-console.log(
-destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan"));
+
+console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
+*/
+
+// Wherefore art thou
+
+function whatIsInAName(collection, source) {
+  console.log(source.hasOwnProperty('last'));
+  let prop = Object.keys(source);
+  for ( let i = 0; i < collection.length; i++){
+    
+    if (collection[i].hasOwnProperty(Object.keys(source))){
+      console.log('Tiene la Propiedad');
+      console.log(collection[i]);
+    }
+  }  
+}
+
+whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" },
+  ],
+  { last: "Capulet" }
+);
