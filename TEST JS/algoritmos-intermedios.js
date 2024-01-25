@@ -65,15 +65,37 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 // Wherefore art thou
 
 function whatIsInAName(collection, source) {
-  console.log(source.hasOwnProperty('last'));
-  let prop = Object.keys(source);
-  for ( let i = 0; i < collection.length; i++){
-    
-    if (collection[i].hasOwnProperty(Object.keys(source))){
-      console.log('Tiene la Propiedad');
-      console.log(collection[i]);
+  console.log(collection);
+  console.log(source);
+  console.log(Object.keys(collection));
+  let collectionKey = Object.keys(collection[2]);
+  let sourceKey = Object.keys(source);
+
+  console.log(collectionKey);
+  console.log(sourceKey)
+
+  let arr = [];
+  /*
+  for (let i = 0; i < collectionKey.length; i++){
+    for (let j = 0; j < sourceKey.length; j++){
+      if ( collectionKey[i] === sourceKey[j]){
+        console.log(collectionKey[i]);
+        console.log(sourceKey[j]);
+        console.log('Existe la Prop');
+        arr.push(collection[i]);
+      }
     }
-  }  
+  }
+  */
+  for ( let i = 0; collection.)
+  for (let key in source){
+    console.log(key)
+  }
+  console.log(arr);
+
+  let prop = Object.keys(source);
+  console.log(prop);
+ 
 }
 
 whatIsInAName(
