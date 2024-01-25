@@ -65,16 +65,16 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 // Wherefore art thou
 
 function whatIsInAName(collection, source) {
-  console.log(collection);
-  console.log(source);
-  console.log(Object.keys(collection));
-  let collectionKey = Object.keys(collection[2]);
-  let sourceKey = Object.keys(source);
+  // console.log(collection);
+  // console.log(source);
+  // console.log(Object.keys(collection));
+  // let collectionKey = Object.keys(collection[2]);
+  // let sourceKey = Object.keys(source);
 
-  console.log(collectionKey);
-  console.log(sourceKey)
+  // console.log(collectionKey);
+  // console.log(sourceKey)
 
-  let arr = [];
+  // let arr = [];
   /*
   for (let i = 0; i < collectionKey.length; i++){
     for (let j = 0; j < sourceKey.length; j++){
@@ -87,17 +87,18 @@ function whatIsInAName(collection, source) {
     }
   }
   */
-  for ( let i = 0; collection.)
-  for (let key in source){
-    console.log(key)
-  }
-  console.log(arr);
 
-  let prop = Object.keys(source);
-  console.log(prop);
- 
+  let newA = []
+  for (let key in collection){
+    console.log(Object.keys(collection[key]));
+    for (let clave in collection[key]){
+      console.log(clave);
+    }
+    console.log(collection[key]);
+    newA.push(collection[key]);
+  } 
 }
-
+console.log(newA)
 whatIsInAName(
   [
     { first: "Romeo", last: "Montague" },
