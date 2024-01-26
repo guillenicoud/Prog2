@@ -65,45 +65,36 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 // Wherefore art thou
 
 function whatIsInAName(collection, source) {
-  // console.log(collection);
-  // console.log(source);
-  // console.log(Object.keys(collection));
-  // let collectionKey = Object.keys(collection[2]);
-  // let sourceKey = Object.keys(source);
-
-  // console.log(collectionKey);
-  // console.log(sourceKey)
-
-  // let arr = [];
-  /*
-  for (let i = 0; i < collectionKey.length; i++){
-    for (let j = 0; j < sourceKey.length; j++){
-      if ( collectionKey[i] === sourceKey[j]){
-        console.log(collectionKey[i]);
-        console.log(sourceKey[j]);
-        console.log('Existe la Prop');
-        arr.push(collection[i]);
+  let newA = [];
+  let props = Object.keys(source);
+  console.log(props);
+  for (let i = 0; i < collection.length; i++) {
+    let exist = false;
+    for (let j = 0; j < props.length; j++) {
+      console.log(props[j]);
+      console.log(collection[i].hasOwnProperty(props[j]));
+      console.log(collection[i].last);
+      if (!collection[i].hasOwnProperty(props[j]) || collection[i].last !== source.last){
+        break
+      }
+      else{
+        exist = true;
       }
     }
-  }
-  */
-
-let newA = [];
-for (let key in collection){
-    console.log(Object.keys(collection[key]));
-    for (let clave in collection[key]){
-      console.log(clave);
+    if (exist){
+      newA.push(collection[i]);
     }
-    console.log(collection[key]);
-    newA.push(collection[key]);
-  } 
+  }
+  return newA;
 }
-console.log(newA);
-whatIsInAName(
-  [
-    { first: "Romeo", last: "Montague" },
-    { first: "Mercutio", last: null },
-    { first: "Tybalt", last: "Capulet" },
-  ],
-  { last: "Capulet" }
+
+console.log(
+    whatIsInAName(
+        [
+            { first: "Romeo", last: "Montague" },
+            { first: "Mercutio", last: null },
+            { first: "Tybalt", last: "Capulet" },
+        ],
+        { last: "Capulet" }
+    )
 );
