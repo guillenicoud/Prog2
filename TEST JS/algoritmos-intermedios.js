@@ -66,22 +66,20 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 
 function whatIsInAName(collection, source) {
   let newA = [];
-  let props = Object.keys(source);
-  console.log(props);
   for (let i = 0; i < collection.length; i++) {
     let exist = false;
-    for (let j = 0; j < props.length; j++) {
-      console.log(props[j]);
-      console.log(collection[i].hasOwnProperty(props[j]));
-      console.log(collection[i].last);
-      if (!collection[i].hasOwnProperty(props[j]) || collection[i].last !== source.last){
-        break
-      }
-      else{
+    for (let p in source) {
+      console.log(collection[i][p]);
+      console.log(source[p])
+      console.log(source[p]);  
+      if( collection[i].hasOwnProperty[p] || collection[i][p] === source[p]){
         exist = true;
       }
+      else{
+        exist = false;
+      }
     }
-    if (exist){
+    if ( exist === true){
       newA.push(collection[i]);
     }
   }
@@ -89,12 +87,8 @@ function whatIsInAName(collection, source) {
 }
 
 console.log(
-    whatIsInAName(
-        [
-            { first: "Romeo", last: "Montague" },
-            { first: "Mercutio", last: null },
-            { first: "Tybalt", last: "Capulet" },
-        ],
-        { last: "Capulet" }
-    )
+  whatIsInAName(
+    [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
+    { apple: 1, cookie: 2 }
+  )
 );
