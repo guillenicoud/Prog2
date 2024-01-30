@@ -94,27 +94,34 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 // Spinal Tap Case
 
 function spinalCase(str) {
-  let regex = /[A-Z]/;
-  console.log(regex.test(str)); 
-  let word = "";
-  for (let i = 0; i < str.length; i++){
-    console.log(str[i])
-    if (regex.test(str[i])) {
-      word = word + str[i];
-    }
-  }
-
-  return word;
+  
+  let regex = /\s|_/g;
+  console.log(regex.test(str));
+  str = str.replace(regex, "-");
+  let regexM = /[A-Z]/g;
+  let arrS = str.split('');
+  console.log(arrS);
+  for (let i = 0; i < arrS.length; i++){
+    console.log(arrS[i])
+      if (regex.test(arrS[i])){
+        console.log('Pos:' + i);
+        arrS.splice(i, 0, "-");
+      }
+    
+  } 
+  console.log(arrS);
+  let x = arrS.join('').toLowerCase();
+  return x
 }
 
-console.log(spinalCase('This Is Spinal Tap'));
+console.log(spinalCase('AllThe-small Things'));
 
-let regex = /\s|_|[A-Z]/gm;
-let text = "AllThe-small Things";
-if (regex.test(text)){
-  console.log('Es Correcto');
-}
-else{
-  console.log('Es Incorrecto');
-}
+// let regex = /\s|_|[A-Z]/gm;
+// let text = "AllThe-small Things";
+// if (regex.test(text)){
+//   console.log('Es Correcto');
+// }
+// else{
+//   console.log('Es Incorrecto');
+// }
 
