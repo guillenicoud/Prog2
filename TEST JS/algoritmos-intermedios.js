@@ -64,31 +64,57 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 
 // Wherefore art thou
 
-function whatIsInAName(collection, source) {
-  let newA = [];
-  for (let i = 0; i < collection.length; i++) {
-    let exist = false;
-    for (let p in source) {
-      console.log(collection[i][p]);
-      console.log(source[p])
-      console.log(source[p]);  
-      if( collection[i].hasOwnProperty[p] || collection[i][p] === source[p]){
-        exist = true;
-      }
-      else{
-        exist = false;
-      }
-    }
-    if ( exist === true){
-      newA.push(collection[i]);
+// function whatIsInAName(collection, source) {
+//   let newA = [];
+//   for (let i = 0; i < collection.length; i++) {
+//     let exist = false;
+//     for (let p in source) {
+//       console.log(collection[i][p]);
+//       console.log(source[p])
+//       console.log(source[p]);
+//       if (!collection[i].hasOwnProperty(p) || collection[i][p] !== source[p]) {
+//         exist = false;
+//         break;
+//       }
+//       else {
+//         exist = true;
+//       }
+//     }
+//     if (exist === true) {
+//       newA.push(collection[i]);
+//     }
+//   }
+//   return newA;
+// }
+
+// console.log(
+//   whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })
+// );
+
+// Spinal Tap Case
+
+function spinalCase(str) {
+  let regex = /[A-Z]/;
+  console.log(regex.test(str)); 
+  let word = "";
+  for (let i = 0; i < str.length; i++){
+    console.log(str[i])
+    if (regex.test(str[i])) {
+      word = word + str[i];
     }
   }
-  return newA;
+
+  return word;
 }
 
-console.log(
-  whatIsInAName(
-    [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
-    { apple: 1, cookie: 2 }
-  )
-);
+console.log(spinalCase('This Is Spinal Tap'));
+
+let regex = /a/;
+let text = "a";
+if (regex.test(text)){
+  console.log('Es Correcto');
+}
+else{
+  console.log('Es Incorrecto');
+}
+
