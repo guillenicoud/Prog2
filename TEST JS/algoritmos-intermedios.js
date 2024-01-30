@@ -109,8 +109,8 @@ function spinalCase(str) {
 
 console.log(spinalCase('This Is Spinal Tap'));
 
-let regex = /a/;
-let text = "a";
+let regex = /\s|_|[A-Z]/gm;
+let text = "AllThe-small Things";
 if (regex.test(text)){
   console.log('Es Correcto');
 }
