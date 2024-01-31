@@ -93,35 +93,27 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 
 // Spinal Tap Case
 
-function spinalCase(str) {
-  
-  let regex = /\s|_/g;
-  console.log(regex.test(str));
-  str = str.replace(regex, "-");
-  let regexM = /[A-Z]/g;
-  let arrS = str.split('');
-  console.log(arrS);
-  for (let i = 0; i < arrS.length; i++){
-    console.log(arrS[i])
-      if (regex.test(arrS[i])){
-        console.log('Pos:' + i);
-        arrS.splice(i, 0, "-");
-      }
-    
-  } 
-  console.log(arrS);
-  let x = arrS.join('').toLowerCase();
-  return x
+// function spinalCase(str) {
+//   var regex = /\s+|_+/g;
+
+//   // Replace low-upper case to low-space-uppercase
+//   str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+//   console.log(str);
+//   // Replace space and underscore with -
+//   return str.replace(regex, "-").toLowerCase();;
+// }
+
+// console.log(spinalCase('TheAndyGriffithShow'));
+
+// PIG LATIN
+
+function translatePigLatin(str) {
+  let regex = /[aeiouAEIOU]/g;
+  if (regex.test(str[0]) === true){
+    console.log(str[0]);
+    str = str + 'way'
+  }
+  return str;
 }
 
-console.log(spinalCase('AllThe-small Things'));
-
-// let regex = /\s|_|[A-Z]/gm;
-// let text = "AllThe-small Things";
-// if (regex.test(text)){
-//   console.log('Es Correcto');
-// }
-// else{
-//   console.log('Es Incorrecto');
-// }
-
+translatePigLatin("Eonsonant");
