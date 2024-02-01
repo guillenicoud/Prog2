@@ -140,3 +140,30 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 //   }
 // }
 // console.log(translatePigLatin("california"));
+
+//  SEARCH AND RREPLACE
+
+// function myReplace(str, before, after) {
+//   let regex = /[a-z]/g;
+//   let low = regex;
+//   if (low.test(before[0]) && low.test(after[0])){
+//     return str.replace(before, after);
+//   }
+//   else{
+//     if (low.test(before[0])){
+//       after = after.replace(/([A-Z])/, after[0].toLowerCase());
+//       console.log(after);
+//       return str.replace(before, after);
+//     }
+//     else{
+//       after = after.replace(/[a-z]/, after[0].toUpperCase());
+//       return str.replace(before, after);
+//     }
+//   }
+  
+// }
+
+// console.log(myReplace("I think we should look up there", "up", "down"));
+
+// DNA Pairing
+
