@@ -107,13 +107,36 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 
 // PIG LATIN
 
-function translatePigLatin(str) {
-  let regex = /[aeiouAEIOU]/g;
-  if (regex.test(str[0]) === true){
-    console.log(str[0]);
-    str = str + 'way'
-  }
-  return str;
-}
-
-translatePigLatin("Eonsonant");
+// function translatePigLatin(str) {
+//   let regex = /[aeiouAEIOU]/g;
+//   let vocal = regex;
+//   if (vocal.test(str[0])) {
+//     console.log("Empieza con una vocal");
+//     return str + "way";
+//   } 
+//   else {
+//     let aux = "";
+//     let auxV = false;
+//     for (let i = 0; i < str.length; i++) {
+//       if (auxV === false) {
+//         console.log(str[i]);
+//         if (!vocal.test(str[i])) {
+//           console.log(str[i]);
+//           aux = aux + str[i];
+//           console.log(aux);
+//           str = str.slice(i, 0) + str.slice(i + 1);
+//           i--;
+//         } else {
+//             auxV = true;
+//             break;
+//         }
+//       } else {
+//         break;
+//       }
+//     }
+//       console.log(str);
+//       console.log(aux);
+//     return str + aux + 'ay';
+//   }
+// }
+// console.log(translatePigLatin("california"));
