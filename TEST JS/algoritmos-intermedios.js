@@ -166,4 +166,53 @@ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3));
 // console.log(myReplace("I think we should look up there", "up", "down"));
 
 // DNA Pairing
+/*
+function pairElement(str) {
+  let arr = str.split("");
+  let newA = []
+  let auxA = [];
+  console.log(arr);
+  for (let i = 0; i < arr.length; i++){
+    switch (arr[i]) {
+      case 'G':
+        auxA.push(arr[i] , 'C');
+        newA.push(auxA);
+        auxA = [];
+        break;
+      case 'C':
+        auxA.push(arr[i] , 'G');
+        newA.push(auxA);
+        auxA = [];
+        break;     
+      case 'A':
+        auxA.push(arr[i] , 'T');
+        newA.push(auxA);
+        auxA = [];
+        break;    
+      case 'T':
+        auxA.push(arr[i] , 'A');
+        newA.push(auxA);
+        auxA = []
+        break;
+    }
+    console.log(auxA);
 
+  }
+  return newA;
+}
+
+console.log(pairElement("ATCGA"));
+*/
+
+// MISSING LETTERS
+
+function fearNotLetter(str) {
+  let regex = /[a-z]/;
+  for (let i = 0; i < str.length; i ++){
+    console.log(str[i]);
+    
+  }
+  return str;
+}
+
+fearNotLetter("abce");
