@@ -208,22 +208,38 @@ console.log(pairElement("ATCGA"));
 
 function fearNotLetter(str) {
   
-
-  for (let i = str.charCodeAt(0); i <= str.charCodeAt(str.length-1); i++){
-    
-    console.log(String.fromCharCode(i));
-  
-    
+  // Convierto a Array
+  let arrLetters = str.split('');
+  console.log(arrLetters);
+  // Array con todos los ASCII
+  let arrAscii = [];
+  // Variable de letras faltantes 
+  let letters = "";
+  for (let j = str.charCodeAt(0); j <= str.charCodeAt(str.length-1); j ++){
+    arrAscii.push(j);
   }
+  console.log(arrAscii);
+  for (let i = 0; i < str.length; i++){
+    console.log(str[i]);
+    console.log(str.charCodeAt(i));
+    for ( let k = 0; k < arrAscii.length; k ++){
+      console.log(arrAscii[k]);
+      if (str.charCodeAt(i) !== (arrAscii[k])){
+        letters = arrAscii[k];
+        break;
+        
+      }
   
-  return str;
+    }
+  }
+  return letters;
 }
 
-fearNotLetter("abce");
+console.log(fearNotLetter("abcdefghjklmno"));
 
-'ABC'.charCodeAt(0); // returns 65
+// 'ABC'.charCodeAt(0); // returns 65
 
-var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-console.log(str.charCodeAt(str.length - 1));
-console.log(String.fromCharCode(90));
+// var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+// console.log(str.charCodeAt(str.length - 1));
+console.log(String.fromCharCode(110));
 // Output: 90
