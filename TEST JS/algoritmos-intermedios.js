@@ -207,12 +207,23 @@ console.log(pairElement("ATCGA"));
 // MISSING LETTERS
 
 function fearNotLetter(str) {
-  let regex = /[a-z]/;
-  for (let i = 0; i < str.length; i ++){
-    console.log(str[i]);
+  
+
+  for (let i = str.charCodeAt(0); i <= str.charCodeAt(str.length-1); i++){
+    
+    console.log(String.fromCharCode(i));
+  
     
   }
+  
   return str;
 }
 
 fearNotLetter("abce");
+
+'ABC'.charCodeAt(0); // returns 65
+
+var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+console.log(str.charCodeAt(str.length - 1));
+console.log(String.fromCharCode(90));
+// Output: 90
