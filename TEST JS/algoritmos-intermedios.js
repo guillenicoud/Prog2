@@ -206,40 +206,67 @@ console.log(pairElement("ATCGA"));
 
 // MISSING LETTERS
 
-function fearNotLetter(str) {
+// function fearNotLetter(str) {
   
-  // Convierto a Array
-  let arrLetters = str.split('');
-  console.log(arrLetters);
-  // Array con todos los ASCII
-  let arrAscii = [];
-  // Variable de letras faltantes 
-  let letters = "";
-  for (let j = str.charCodeAt(0); j <= str.charCodeAt(str.length-1); j ++){
-    arrAscii.push(j);
-  }
-  console.log(arrAscii);
-  for (let i = 0; i < str.length; i++){
-    console.log(str[i]);
-    console.log(str.charCodeAt(i));
-    for ( let k = 0; k < arrAscii.length; k ++){
-      console.log(arrAscii[k]);
-      if (str.charCodeAt(i) !== (arrAscii[k])){
-        letters = arrAscii[k];
-        break;
-        
-      }
+//   // Convierto a Array
+//   let arrLetters = str.split('');
+//   console.log(arrLetters);
+//   // Array con todos los ASCII
+//   let arrAscii = [];
+//   // Variable de letras faltantes 
+//   let letters = "";
+//   // Creo un rray con el rango de letras completo para despues comparar
+//   for (let j = str.charCodeAt(0); j <= str.charCodeAt(str.length-1); j ++){
+//     arrAscii.push(j);
+//   }
+//   // Si estan todas las letras retorno UNDEFINED
+//   if (str.length == arrAscii.length){
+//     return undefined;
+//   }
   
-    }
-  }
-  return letters;
+//   let aux = true;
+//   for (let i = 0; i < arrAscii.length; i++){
+//     for ( let j = 0; j < str.length; j++){
+//       if (arrAscii[i] == str.charCodeAt(j)){
+//         aux = true;
+//         break;
+//       }
+//       else{
+//         aux = false;
+//       }
+//     }
+//     if (aux == false){
+//       letters = arrAscii[i];
+//     }
+//   }
+//   return String.fromCharCode(letters);
+// }
+
+// console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"));
+
+// Sorted Union
+
+// function uniteUnique(...arr) {
+//   let newA = [];
+//   for (let i = 0; i < arr.length; i ++){
+//     for (let j = 0; j < arr[i].length; j++){
+//       console.log(arr[i][j]);
+//       if ( newA.indexOf(arr[i][j]) === -1){
+//           newA.push(arr[i][j]);
+//       }
+//     }
+//   }
+
+//   return newA;
+// }
+
+// console.log(uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]));
+
+// Convert HTML Entities
+
+function convertHTML(str) {
+  
+  return str.replace('&', 'amp') ;
 }
 
-console.log(fearNotLetter("abcdefghjklmno"));
-
-// 'ABC'.charCodeAt(0); // returns 65
-
-// var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-// console.log(str.charCodeAt(str.length - 1));
-console.log(String.fromCharCode(110));
-// Output: 90
+console.log(convertHTML("Dolce & Gabbana"));
