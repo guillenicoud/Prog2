@@ -265,8 +265,19 @@ console.log(pairElement("ATCGA"));
 // Convert HTML Entities
 
 function convertHTML(str) {
-  
-  return str.replace('&', 'amp') ;
+  let newA = str.slice('');
+  console.log(newA);
+  for (let i = 0; i < newA.length; i++){
+    if (newA[i].includes('&')){
+      newA[i].replace('&', '&amp;');
+    }
+    if (newA[i].includes('<')){
+      newA[i].replace('<', '&lt;');
+      console.log(newA[i]);
+    }
+    
+  }
+  return newA;
 }
 
-console.log(convertHTML("Dolce & Gabbana"));
+console.log(convertHTML("Hamburgers < Pizza < Tacos"));
