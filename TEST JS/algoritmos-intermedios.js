@@ -263,21 +263,70 @@ console.log(pairElement("ATCGA"));
 // console.log(uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]));
 
 // Convert HTML Entities
-
+/*
 function convertHTML(str) {
-  let newA = str.slice('');
+  let newA = str.split('');
   console.log(newA);
+  console.log(str);
   for (let i = 0; i < newA.length; i++){
     if (newA[i].includes('&')){
-      newA[i].replace('&', '&amp;');
+      newA[i] = newA[i].replace('&', '&amp;');
     }
     if (newA[i].includes('<')){
-      newA[i].replace('<', '&lt;');
-      console.log(newA[i]);
+      newA[i] = newA[i].replace('<', '&lt;');
+    }
+    if (newA[i].includes('>')){
+      newA[i] = newA[i].replace('>', '&gt;');
     }
     
+    if (newA[i].includes('"')){
+      newA[i] = newA[i].replace('"', '&quot');
+    }
+    if (newA[i].includes("'")){
+      newA[i] = newA[i].replace("'", '&apos;');
+    }
+    if (newA[i].includes('<>')){
+      newA[i] = newA[i].replace('<>', '&lt;&gt');
+    }
   }
-  return newA;
+  let s = newA.join('')
+  return s;
 }
 
-console.log(convertHTML("Hamburgers < Pizza < Tacos"));
+console.log(convertHTML('Stuff in "quotation marks"'));
+*/ 
+
+// Sum All Odd Fibonacci Numbers
+
+// function sumFibs(num) {
+//   for (let i = 1; i <= num; i ++){
+//     if (i % 2 == 1){
+//       console.log(i);
+//     }
+//   }
+
+//   return num;
+// }
+
+// sumFibs(1000);
+
+function fib(num){
+  let fib = 0;
+  let aux = 1;
+  let arrF = []
+  if (num > 0){
+    for (let i = 0; i < num; i++){
+      arrF.push(fib);
+      console.log(fib);
+      fib = fib + aux;
+      aux = fib;      
+      console.log(aux);
+      if (fib > 10){
+        break;
+      }
+    }
+  }
+  return arrF;
+}
+
+console.log(fib(10));
