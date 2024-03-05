@@ -311,22 +311,33 @@ console.log(convertHTML('Stuff in "quotation marks"'));
 // sumFibs(1000);
 
 function fib(num){
-  let fib = 0;
-  let aux = 1;
-  let arrF = []
-  if (num > 0){
-    for (let i = 0; i < num; i++){
-      arrF.push(fib);
-      console.log(fib);
-      fib = fib + aux;
-      aux = fib;      
-      console.log(aux);
-      if (fib > 10){
-        break;
+  if (num <= 0){
+    return 0;
+  }
+  if (num <= 1){
+    return 1;
+  }
+  if (num >= 2){
+    let a = 0;
+    let b = 1;
+    let c = 0;
+    let sum = 0;
+
+    let vecF = [];
+    for (let i = 0; a < num; i++){
+      vecF.push(a);
+      c = a + b;
+      b = a;
+      a = c;
+    }
+    for (let  k = 0; k < vecF.length; k++){
+      if ( vecF[k] % 2 == 1){
+      sum = sum + vecF[k];
+      console.log(sum);
       }
     }
+  return sum;
   }
-  return arrF;
 }
 
-console.log(fib(10));
+console.log(fib(100));
