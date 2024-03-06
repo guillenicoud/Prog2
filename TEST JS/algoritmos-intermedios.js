@@ -310,6 +310,7 @@ console.log(convertHTML('Stuff in "quotation marks"'));
 
 // sumFibs(1000);
 
+/*
 function fib(num){
   if (num <= 0){
     return 0;
@@ -324,20 +325,47 @@ function fib(num){
     let sum = 0;
 
     let vecF = [];
-    for (let i = 0; a < num; i++){
+    for (let i = 0; c <= num; i++){
       vecF.push(a);
       c = a + b;
-      b = a;
-      a = c;
-    }
+      if (c <=  num){
+          b = a;
+          a = c;
+      }
+   }
     for (let  k = 0; k < vecF.length; k++){
       if ( vecF[k] % 2 == 1){
       sum = sum + vecF[k];
-      console.log(sum);
       }
     }
-  return sum;
+    return sum;
   }
 }
+console.log(fib(75025));
+*/
 
-console.log(fib(100));
+// Sum All Primes
+
+function sumPrimes(num) {
+  
+  let sum = 0;
+  let vecP = []
+  for (let h = 2; h < num; h++){
+    for (let i = 2; i < h; i++) {
+      if (h % i == 0){
+        console.log(h)
+        break
+      }
+      else{
+        vecP.push(h);
+        break
+     }
+     
+    }
+  }  
+  console.log(vecP)
+  return vecP;
+
+}
+
+console.log(sumPrimes(11));
