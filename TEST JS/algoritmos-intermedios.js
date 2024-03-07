@@ -350,22 +350,26 @@ function sumPrimes(num) {
   
   let sum = 0;
   let vecP = []
-  for (let h = 2; h < num; h++){
+  
+
+  for (let h = 2; h <= num; h++) {
+    let isPrime = true;
     for (let i = 2; i < h; i++) {
-      if (h % i == 0){
-        console.log(h)
-        break
+      if (h % i == 0) {
+        console.log(h);
+        isPrime = false;
       }
-      else{
-        vecP.push(h);
-        break
-     }
-     
+    }
+
+    if (isPrime){
+      vecP.push(h);
+      console.log(h);
+      sum = sum + num;
     }
   }  
-  console.log(vecP)
-  return vecP;
 
+  console.log(vecP);
+  return vecP;
 }
 
-console.log(sumPrimes(11));
+console.log(sumPrimes(13));
