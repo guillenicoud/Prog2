@@ -257,27 +257,56 @@
 
 // Usa el método "some" para comprobar si algún elemento en un arreglo cumple un criterio
 
-function checkPositive(arr) {
-  // Cambia solo el código debajo de esta línea
+// function checkPositive(arr) {
+//   // Cambia solo el código debajo de esta línea
   
-  return arr.some((element => 
-    element > 0)
-  )
-  return a;
-  // Cambia solo el código encima de esta línea
-}
+//   return arr.some((element => 
+//     element > 0)
+//   )
+//   return a;
+//   // Cambia solo el código encima de esta línea
+// }
 
-console.log(checkPositive([-1, -2, -3, -4, -5]));
+// console.log(checkPositive([-1, -2, -3, -4, -5]));
 
-// Introducción a la currificación y a la aplicación de funciones parciales ARIDAD
+// // Introducción a la currificación y a la aplicación de funciones parciales ARIDAD
 
-function add(x) {
-  // Cambia solo el código debajo de esta línea
-  return function(y){
-    return function(z){
-      return x + y + z
+// function add(x) {
+//   // Cambia solo el código debajo de esta línea
+//   return function(y){
+//     return function(z){
+//       return x + y + z
+//     }
+//   }
+// }
+
+// console.log(add(10)(20)(30));
+
+function smallestCommons(arr) {
+  // Setup
+  const [min, max] = arr.sort((a, b) => a - b);
+  const numberDivisors = max - min + 1;
+  // Largest possible value for SCM
+  let upperBound = 1;
+  for (let i = min; i <= max; i++) {
+    upperBound *= i;
+  }
+  console.log(upperBound);
+  // Test all multiples of 'max'
+  for (let multiple = max; multiple <= upperBound; multiple += max) {
+    console.log(multiple);
+    // Check if every value in range divides 'multiple'
+    let divisorCount = 0;
+    for (let i = min; i <= max; i++) {
+      // Count divisors
+      if (multiple % i === 0) {
+        divisorCount += 1;
+      }
+    }
+    if (divisorCount === numberDivisors) {
+      return multiple;
     }
   }
 }
 
-console.log(add(10)(20)(30));
+console.log(smallestCommons([1,5]));

@@ -346,30 +346,60 @@ console.log(fib(75025));
 
 // Sum All Primes
 
-function sumPrimes(num) {
+// function sumPrimes(num) {
   
-  let sum = 0;
-  let vecP = []
+//   let sum = 0;
+//   let vecP = []
   
 
-  for (let h = 2; h <= num; h++) {
-    let isPrime = true;
-    for (let i = 2; i < h; i++) {
-      if (h % i == 0) {
-        console.log(h);
-        isPrime = false;
+//   for (let h = 2; h <= num; h++) {
+//     let isPrime = true;
+//     for (let i = 2; i < h; i++) {
+//       if (h % i == 0) {
+//         console.log(h);
+//         isPrime = false;
+//       }
+//     }
+
+//     if (isPrime){
+//       vecP.push(h);
+//       console.log(h);
+//       sum = sum + h;
+//     }
+//   }  
+
+//   console.log(vecP);
+//   return sum;
+// }
+
+// console.log(sumPrimes(10));
+
+// Smallest Common Multiple
+
+function smallestCommons(arr) {
+  // Setup
+  const [min, max] = arr.sort((a, b) => a - b);
+  console.log
+  const numberDivisors = max - min + 1;
+  // Largest possible value for SCM
+  let upperBound = 1;
+  for (let i = min; i <= max; i++) {
+    upperBound *= i;
+  }
+  // Test all multiples of 'max'
+  for (let multiple = max; multiple <= upperBound; multiple += max) {
+    // Check if every value in range divides 'multiple'
+    let divisorCount = 0;
+    for (let i = min; i <= max; i++) {
+      // Count divisors
+      if (multiple % i === 0) {
+        divisorCount += 1;
       }
     }
-
-    if (isPrime){
-      vecP.push(h);
-      console.log(h);
-      sum = sum + num;
+    if (divisorCount === numberDivisors) {
+      return multiple;
     }
-  }  
-
-  console.log(vecP);
-  return vecP;
+  }
 }
 
-console.log(sumPrimes(13));
+console.log(smallestCommons([1, 5]));
