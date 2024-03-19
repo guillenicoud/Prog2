@@ -378,28 +378,22 @@ console.log(fib(75025));
 
 function smallestCommons(arr) {
   // Setup
-  const [min, max] = arr.sort((a, b) => a - b);
-  console.log
-  const numberDivisors = max - min + 1;
-  // Largest possible value for SCM
-  let upperBound = 1;
-  for (let i = min; i <= max; i++) {
-    upperBound *= i;
-  }
+  let a = arr[0];
+  let b = arr[1];
+
+  let cociente = a / b;
+  let resto = a % b;
+  
+  console.log(Math.floor(cociente));
+  console.log(resto);
+
+  
+
+  
+
   // Test all multiples of 'max'
-  for (let multiple = max; multiple <= upperBound; multiple += max) {
-    // Check if every value in range divides 'multiple'
-    let divisorCount = 0;
-    for (let i = min; i <= max; i++) {
-      // Count divisors
-      if (multiple % i === 0) {
-        divisorCount += 1;
-      }
-    }
-    if (divisorCount === numberDivisors) {
-      return multiple;
-    }
-  }
+  
+
 }
 
-console.log(smallestCommons([1, 5]));
+console.log(smallestCommons([48, 18]));
