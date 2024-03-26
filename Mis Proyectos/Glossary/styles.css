@@ -43,11 +43,19 @@
 
 a {
     font-weight: 900;
+
 }
 
 a:hover {
+
+
     border-bottom: 5px solid #b6c4ec;
+    margin-bottom: -5px;
+
+    /* border-radius: 30px;
+    outline: 5px solid #b6c4ec; */
 }
+
 
 .def {
     color: #b6c4ec;
